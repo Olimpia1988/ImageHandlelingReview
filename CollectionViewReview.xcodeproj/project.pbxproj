@@ -21,7 +21,6 @@
 		121C715C244FE1A6006A1661 /* MagicCardAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121C715B244FE1A6006A1661 /* MagicCardAPIManager.swift */; };
 		121C7161244FEC7C006A1661 /* cards.json in Resources */ = {isa = PBXBuildFile; fileRef = 121C7160244FEC7C006A1661 /* cards.json */; };
 		12B474322450C3CB00F2C8FE /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B474312450C3CB00F2C8FE /* CardCell.swift */; };
-		12B47434245341A600F2C8FE /* ImageCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B47433245341A600F2C8FE /* ImageCaching.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +52,6 @@
 		121C715B244FE1A6006A1661 /* MagicCardAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCardAPIManager.swift; sourceTree = "<group>"; };
 		121C7160244FEC7C006A1661 /* cards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cards.json; sourceTree = "<group>"; };
 		12B474312450C3CB00F2C8FE /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
-		12B47433245341A600F2C8FE /* ImageCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaching.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				121C7152244FE0D3006A1661 /* CardModel.swift */,
-				12B47433245341A600F2C8FE /* ImageCaching.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,7 +275,6 @@
 				121C7151244FE0C8006A1661 /* ImageAPIManager.swift in Sources */,
 				121C712D244FDFA3006A1661 /* AppDelegate.swift in Sources */,
 				121C715C244FE1A6006A1661 /* MagicCardAPIManager.swift in Sources */,
-				12B47434245341A600F2C8FE /* ImageCaching.swift in Sources */,
 				121C712F244FDFA3006A1661 /* SceneDelegate.swift in Sources */,
 				121C7159244FE149006A1661 /* AppErrors.swift in Sources */,
 				121C7153244FE0D3006A1661 /* CardModel.swift in Sources */,

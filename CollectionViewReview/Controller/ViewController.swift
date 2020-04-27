@@ -45,7 +45,20 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCell", for: indexPath) as? CardCell else { return UICollectionViewCell() }
     let singleCard = cards[indexPath.row]
-    cell.configureCell(singleCard) { }
+    if let unwrapedImage = singleCard.imageUrl {
+      ImageAPIClient.manager.loadImage(from: unwrapedImage) { (result) in
+        DispatchQueue.main.async {
+                switch result {
+          case .success(let imageData):
+            cell.cardImage.image = imageData
+          case .failure(let error):
+            print(error)
+          }
+
+        }
+      }
+
+    }
     return cell
   }
 
