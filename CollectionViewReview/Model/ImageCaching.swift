@@ -2,9 +2,20 @@ import UIKit
 
 final class ImageGetterManager {
   
-  private init() {}
   
-  static let cache = NSCache<NSString, UIImage>()
+     static let shared = ImageGetterManager()
+    
+    
+  
+    private var cache: NSCache<NSString, UIImage>
+    
+    
+    private init() {
+        cache = NSCache<NSString, UIImage>()
+        cache.countLimit = 100 // number of objects
+        cache.totalCostLimit = 10 * 1024 * 1024 // max
+    }
+    
   
   static func getImage(urlStr: String, completionHandler: @escaping (Result<UIImage, AppError>) -> Void) {
     
@@ -20,7 +31,7 @@ final class ImageGetterManager {
       case .success(let imageData):
         DispatchQueue.main.async {
           if let image = UIImage(data: imageData) {
-            cache.setObject(image, forKey: url.absoluteString as NSString)
+            ImageGetterManager.shared.cache.setObject(image, forKey: url.absoluteString as NSString)
             completionHandler(.success(image))
           }
         }
@@ -30,7 +41,7 @@ final class ImageGetterManager {
   
   
   static func getImageFromCache(with url: String) -> UIImage? {
-    if let image = cache.object(forKey: url as NSString) {
+    if let image = ImageGetterManager.shared.cache.object(forKey: url as NSString) {
       return image
     } else {
       return nil
